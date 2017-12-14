@@ -16,6 +16,7 @@
     <% table_data.push({month: counter, beginning_bal: balance, mortgage_payment: @investment.mortgage_payment, interest_payment: balance * @investment.apr * 0.01, principal_payment: payment - (balance * @investment.apr * 0.01), ending_balance: balance - ((@investment.mortgage_payment) - (balance * @investment.apr * 0.01))}) %>
     <!-- balance - principal payment -->
     <% balance = balance - (payment - (balance * @investment.apr * 0.01)) %>
+    <% counter = counter - 1 %>
  <% end %>
 
 <%= table_data.each do |data|%>
