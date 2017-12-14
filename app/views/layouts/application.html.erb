@@ -3,12 +3,19 @@
   <head>
     <title>ReiaIo</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <link href="https://fonts.googleapis.com/css?family=Quattrocento+Sans|Ubuntu+Condensed" rel="stylesheet">
   </head>
 
   <body>
+    <div class='menu-container'>
+    <div class='menu'>
+      <div class='services'><a href="#services" class="menu_item" id="services-link">MEMBERS</a></div>
+      <div class='about'><a href="#welcome" class="menu_item" id="about-link">SCREENER</a></div>
+      <div class='contact'><a href="#contact" class="menu_item" id="contact-link">ABOUT</a></div>
+    </div>
+  </div>
     <%= yield %>
   </body>
 </html>

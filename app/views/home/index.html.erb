@@ -1,14 +1,13 @@
- <div class='menu-container'>
-    <div class='menu'>
-      <div class='services'><a href="#services" class="menu_item" id="services-link">MEMBERS</a></div>
-      <div class='about'><a href="#welcome" class="menu_item" id="about-link">SCREENER</a></div>
-      <div class='contact'><a href="#contact" class="menu_item" id="contact-link">ABOUT</a></div>
-    </div>
-  </div>
+
 
   <div class='header-container'>
-    <div class='header'>
-      <div class='logo'><%= image_tag ("reia_io.png") %></div>
+   <div class='group'>
+    <div class='logo'><%= image_tag ("reia_io_1.png") %></div>
+    <div class='header-item'>
+      <h1>Real Estate Analysis</h1>
+      <br>
+      <p>Use our dynamic screener to estimate the soundness of the investment you will be making. Using this screener, you can analyze the risk of your investment using proven technical principles practiced by some of the top investing firms in the world.
+    </div>
     </div>
   </div>
 
@@ -16,9 +15,30 @@
   <div class='welcome-container' id="welcome">
     <div class='welcome'>
       <br>
-      <br>Real Estate Investment Screener</h1>
+      <p>Investment Screener</p>
+      <br>
+
+      <%= form_for @investment = Investment.new do |f| %>
+
+        <p>Mortgage type (fixed, by years):</p>
+        <%= f.select :mortgage_type, [30, 15]%><br><br>
+
+        <%= f.label :price %>
+        <%= f.text_field :price %><br><br>
+
+        <%= f.label :down_payment %>
+        <%= f.text_field :down_payment %><br><br>
+
+        <%= f.label :interest_rate %>
+        <%= f.text_field :interest_rate %><br><br>
+
+        <%= f.submit "Submit"%>
+
+      <% end %>
+
+
 
 
     </div>
-
   </div>
+

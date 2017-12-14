@@ -9,40 +9,6 @@
   box-sizing: border-box;
 }
 
-.menu-container {
-  color: white;
-  background-color: white; opacity: 0.8; filter: alpha(opacity=50);
-  padding: 18px 0;
-  display: flex;
-  justify-content: center;
-  font-family: 'Work Sans', sans-serif;
-  font-size: 16px;
-  font-weight: bold;
-  /*to fix atop*/
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  border-bottom: 1px solid;
-  /*border-color: black;*/
-  z-index: 3;
-}
-
-
-p {
-  font-size: 20px;
-}
-
-a {
-  text-decoration: none !important;
-}
-
-.menu_item {
-  font-size: 12px;
-  text-decoration: none !important;
-  color: black;
-}
-
 li {
   font-size: 20px;
 }
@@ -61,7 +27,7 @@ form {
 }
 
 input {
-  font-size: 25px;
+  font-size: 20px;
   color: blue;
   border: black solid 1px;
   cursor:pointer;
@@ -69,9 +35,17 @@ input {
   border-radius: 5px;
 }
 
+label {
+  font-size: 20px;
+}
+
+select {
+  font-size: 20px;
+}
+
 .submit {
   color: black;
-  font-size: 20px;
+  font-size: 18px;
   padding:5px 15px;
   background:#ccc;
   border:0 none;
@@ -95,42 +69,48 @@ input {
 }
 
 .header-container {
-  height: 100vh;
-  background-image: url("images/Chicago.png");
+  height: 100%;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 }
 
-.header {
-  width: 900px;
-  height: 300px;
+.group {
   display: flex;
+  align-items: center;
   justify-content: center;
-  height: auto;
-  width: 100%;
+  width: 80%;
+  height: 100vh;
+  color: gray;
+  font-family: 'Quattrocento Sans', sans-serif;
+
+}
+
+.logo {
+  z-index: -2;
+  flex: 1 1 auto;
+  width: 5%;
+}
+
+.header-item {
+  flex: 1 1 auto;
+  width: 25%;
 }
 
 .welcome-container {
   color: black;
   height: auto;
+  width: 100%;
   display: flex;
-  justify-content: center;
-  font-family: 'Open Sans Condensed', sans-serif;
+  justify-content: flex-start;
+  font-family: 'Quattrocento Sans', sans-serif;
  /* background-color: #E8E7E7;*/
-  background-color: #FAFAD2;
+  background-color: #f2f2f2;
   padding-bottom: 20px;
   padding-top: 10px;
+  padding-left: 15px;
 }
 
-.logo {
-  z-index: 2;
-}
-
-.chicago-image {
-  height: 450px; /* or auto, try both*/
-  width: 100%;
-}

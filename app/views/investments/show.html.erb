@@ -1,0 +1,52 @@
+<p id="notice"><%= notice %></p>
+
+<%= link_to 'Edit', edit_investment_path(@investment) %> |
+<%= link_to 'Back', investments_path %><br><br>
+
+<%= @investment.mortgage_balance %><br>
+
+<%= @investment.mortgage_payment %><br><br>
+
+<% counter = @investment.months %>
+<% balance = @investment.mortgage_balance %>
+<% payment = @investment.mortgage_payment %>
+<% table_data = []%>
+
+<% counter.times do %>
+    <% table_data.push({month: counter, beginning_bal: balance, mortgage_payment: @investment.mortgage_payment, interest_payment: balance * @investment.apr * 0.01, principal_payment: payment - (balance * @investment.apr * 0.01), ending_balance: balance - ((@investment.mortgage_payment) - (balance * @investment.apr * 0.01))}) %>
+    <!-- balance - principal payment -->
+    <% balance = balance - (payment - (balance * @investment.apr * 0.01)) %>
+ <% end %>
+
+<%= table_data.each do |data|%>
+<%= data %><br><br>
+<% end %>
+
+<%= table_data[0] %><br><br>
+<%= table_data[1] %>
+
+
+<table>
+  <tr>
+    <th>Month</th>
+    <th>Beginning-of-Month Mortgage Balance</th>
+    <th>Mortgage Payment</th>
+    <th>Interest Payment</th>
+    <th>Principal Payment</th>
+    <th>End-of-Month Mortgage Balance</th>
+    <th>Extra Principal Payment</th>
+  </tr>
+
+
+  <tr>
+    <td><%= counter %></td>
+    <td><%= %></td>
+    <td><%= %></td>
+    <td><%= %></td>
+    <td><%= %></td>
+    <td><%= %></td>
+    <td><%= %></td>
+  </tr>
+
+
+</table>
