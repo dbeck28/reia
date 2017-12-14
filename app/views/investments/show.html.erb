@@ -19,12 +19,9 @@
     <% counter = counter - 1 %>
  <% end %>
 
-<%= table_data.each do |data|%>
-<%= data %><br><br>
+<% table_data.each do |data|%>
+  <%= data %><br><br>
 <% end %>
-
-<%= table_data[0] %><br><br>
-<%= table_data[1] %>
 
 
 <table>
@@ -37,17 +34,5 @@
     <th>End-of-Month Mortgage Balance</th>
     <th>Extra Principal Payment</th>
   </tr>
-
-
-  <tr>
-    <td><%= counter %></td>
-    <td><%= %></td>
-    <td><%= %></td>
-    <td><%= %></td>
-    <td><%= %></td>
-    <td><%= %></td>
-    <td><%= %></td>
-  </tr>
-
 
 </table>
