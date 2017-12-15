@@ -2,7 +2,7 @@
 
 <%= link_to 'Edit', edit_investment_path(@investment) %> |
 <%= link_to 'Back', investments_path %><br><br>
-
+<div>
 Mortgage Balance: <%= @investment.mortgage_balance %><br>
 
 Mortgage Payment: <%= @investment.mortgage_payment %><br>
@@ -10,6 +10,7 @@ Mortgage Payment: <%= @investment.mortgage_payment %><br>
 Interest rate: <%= @investment.interest_rate %>%<br>
 
 APR: <%= @investment.apr %>%<br>
+</div>
 
 <% counter = @investment.months %>
 <% balance = @investment.mortgage_balance %>
