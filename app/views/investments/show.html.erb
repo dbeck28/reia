@@ -3,9 +3,13 @@
 <%= link_to 'Edit', edit_investment_path(@investment) %> |
 <%= link_to 'Back', investments_path %><br><br>
 
-<%= @investment.mortgage_balance %><br>
+Mortgage Balance: <%= @investment.mortgage_balance %><br>
 
-<%= @investment.mortgage_payment %><br><br>
+Mortgage Payment: <%= @investment.mortgage_payment %><br>
+
+Interest rate: <%= @investment.interest_rate %>%<br>
+
+APR: <%= @investment.apr %>%<br>
 
 <% counter = @investment.months %>
 <% balance = @investment.mortgage_balance %>
@@ -18,12 +22,6 @@
     <% balance = balance - (payment - (balance * @investment.apr * 0.01)) %>
     <% counter = counter - 1 %>
  <% end %>
-
-<% table_data.each do |data|%>
-  <%= data %><br><br>
-<% end %>
-
-
 <table>
   <tr>
     <th>Month</th>
@@ -35,4 +33,17 @@
     <th>Extra Principal Payment</th>
   </tr>
 
+  <% table_data.each do |data|%>
+    <tr>
+    <td><%= data[:month] %></td>
+    <td><%= data[:beginning_bal].round(2) %></td>
+    <td><%= data[:mortgage_payment].round(2) %></td>
+    <td><%= data[:interest_payment].round(2) %></td>
+    <td><%= data[:principal_payment].round(2) %></td>
+    <td><%= data[:ending_balance].round(2) %></td>
+    </tr>
+  <% end %>
 </table>
+
+
+
