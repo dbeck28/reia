@@ -5,6 +5,11 @@ class InvestmentsController < ApplicationController
   # GET /investments.json
   def index
     @investments = Investment.all
+
+    respond_to do |format|
+      format.html
+      format.json
+    end
   end
 
   # GET /investments/1
@@ -22,10 +27,6 @@ class InvestmentsController < ApplicationController
   def edit
   end
 
-
-
-  # POST /investments
-  # POST /investments.json
   def create
     @investment = Investment.new(investment_params)
     if @investment.save
@@ -34,15 +35,7 @@ class InvestmentsController < ApplicationController
       @investment.update(mortgage_balance: @investment.price - @investment.down_payment)
       @investment.update( mortgage_payment: @investment.mortgage_balance * (@investment.apr * 0.01) / (1 - (1 + (@investment.apr * 0.01)) ** (-@investment.months)))
     end
-    # respond_to do |format|
-    #   if @investment.save
-    #     format.html { redirect_to @investment, notice: 'Investment was successfully created.' }
-    #     format.json { render :show, status: :created, location: @investment }
-    #   else
-    #     format.html { render :new }
-    #     format.json { render json: @investment.errors, status: :unprocessable_entity }
-    #   end
-    # end
+    redirect_to @investment
   end
 
   # PATCH/PUT /investments/1

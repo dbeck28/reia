@@ -1,31 +1,29 @@
 $(document).ready(function(){
 
-    $(".menu-container .menu .about a").on('click', function(event) {
+    $(".menu-container .menu .screener a").on('click', function(event) {
       event.preventDefault();
       $('html, body').animate({
-          scrollTop: $(".welcome-container").offset().top
+          scrollTop: $(".screener-container").offset().top
           }, 800);
     })
 
-    $(".menu-container .menu .services a").on('click', function(event) {
-      event.preventDefault();
-      $('html, body').animate({
-          scrollTop: $(".our-services-container").offset().top
-          }, 800);
-    })
+    $('.screener-container .screener form').on('submit', function(event) {
 
-    $(".menu-container .menu .contact a").on('click', function(event) {
-      event.preventDefault();
-      $('html, body').animate({
-          scrollTop: $(".contact-container").offset().top
-          }, 800);
-    })
+      var $form = $(this)
+      var data = $form.serialize();
 
-    $(".menu-container .menu .our-team a").on('click', function(event) {
-      event.preventDefault();
-      $('html, body').animate({
-          scrollTop: $(".team-header").offset().top
-          }, 800);
-    })
+
+      $.ajax({
+        type: "post",
+        url: "/investments/",
+        dataType: "html",
+        data: data
+      }).done(function(response) {
+        console.log(response);
+        $(response).appendTo('.screener-container');
+        })
+      })
 
 });
+
+
