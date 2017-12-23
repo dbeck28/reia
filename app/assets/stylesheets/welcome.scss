@@ -54,13 +54,6 @@ select {
   border-radius: 5px;
 }
 
-.menu {
-  /*border: 1px solid #fff;  /* For debugging */
-  width: 300px;
-  height: 20px;
-  display: flex;
-  justify-content: space-around;
-}
 
 .links {
   border: 1px solid #fff;  /* For debugging */
@@ -100,12 +93,11 @@ select {
   width: 25%;
 }
 
-.welcome-container {
+.screener-container {
   color: black;
   height: auto;
   width: 100%;
-  display: flex;
-  justify-content: flex-start;
+
   font-family: 'Quattrocento Sans', sans-serif;
  /* background-color: #E8E7E7;*/
   background-color: #f2f2f2;

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171214032951) do
+ActiveRecord::Schema.define(version: 20171128234026) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,18 +24,6 @@ ActiveRecord::Schema.define(version: 20171214032951) do
     t.integer "mortgage_balance"
     t.float "apr"
     t.integer "months"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "report_months", force: :cascade do |t|
-    t.integer "month"
-    t.float "month_beginning_bal"
-    t.float "interest_payment"
-    t.float "principal_payment"
-    t.float "month_end_bal"
-    t.float "extra_principal_payment"
-    t.integer "investment_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

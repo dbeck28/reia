@@ -11,14 +11,15 @@
     </div>
   </div>
 
-  <a name="welcome" class="smoothScroll"></a>
-  <div class='welcome-container' id="welcome">
-    <div class='welcome'>
+
+  <div class='screener-container' id="screener-id">
+
+    <div class='screener'>
       <br>
       <p>REAL ESTATE SCREENER</p>
       <br>
 
-      <%= form_for @investment = Investment.new do |f| %>
+      <%= form_for @investment = Investment.new, remote: true do |f| %>
 
         <p>Mortgage type (fixed, by years):</p>
         <%= f.select :mortgage_type, [30, 15]%><br><br>
@@ -32,13 +33,15 @@
         <%= f.label :interest_rate %>
         <%= f.text_field :interest_rate %><br><br>
 
-        <%= f.submit "Submit"%>
+        <%= f.button "Submit"%>
+
+
 
       <% end %>
 
 
-
-
     </div>
   </div>
+
+
 
